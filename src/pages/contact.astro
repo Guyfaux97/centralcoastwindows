@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact Us"
+  description="Get a free quote from Central Coast Windows. We supply and install thermally broken aluminium windows across the Central Coast, Sydney, and Newcastle."
+  currentPage="contact"
+>
+
+  <!-- Page header -->
+  <section style="padding: 80px 0 48px; border-bottom: 1px solid var(--border)">
+    <div class="container">
+      <p class="section-label">Get in Touch</p>
+      <h1 class="section-heading">Contact Us</h1>
+      <p class="section-sub">Whether you're a homeowner planning a renovation or a builder looking for a reliable window supplier — we'd love to hear from you. We'll get back to you promptly with a clear, no-obligation quote.</p>
+    </div>
+  </section>
+
+  <!-- Contact section -->
+  <section>
+    <div class="container">
+      <div class="grid-2" style="align-items: start; gap: 64px">
+
+        <!-- Form -->
+        <div>
+          <form
+            name="contact"
+            method="POST"
+            action="/contact/success"
+            style="width: 100%"
+          >
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="04XX XXX XXX" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="suburb">Suburb / Location</label>
+              <input type="text" id="suburb" name="suburb" placeholder="e.g. Gosford, Erina, Terrigal" />
+            </div>
+
+            <div class="form-group">
+              <label for="type">Type of Enquiry</label>
+              <select id="type" name="type">
+                <option value="">Select one...</option>
+                <option value="residential">Residential homeowner</option>
+                <option value="builder">Builder / developer</option>
+                <option value="supply-only">Supply only</option>
+                <option value="supply-install">Supply & installation</option>
+                <option value="consultation">Consultation / advice</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell Us About Your Project</label>
+              <textarea id="message" name="message" placeholder="Number of windows, type of project, timeline, any specific requirements..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Send Enquiry →</button>
+          </form>
+        </div>
+
+        <!-- Contact info -->
+        <div>
+          <div class="card" style="margin-bottom: 24px">
+            <div class="card-icon">📞</div>
+            <h3>Phone</h3>
+            <p><a href="tel:+61200000000" style="color: var(--accent)">02 0000 0000</a></p>
+            <p style="margin-top: 8px">Mon – Fri, 7am – 5pm</p>
+          </div>
+
+          <div class="card" style="margin-bottom: 24px">
+            <div class="card-icon">📧</div>
+            <h3>Email</h3>
+            <p><a href="mailto:info@centralcoastwindows.com.au" style="color: var(--accent)">info@centralcoastwindows.com.au</a></p>
+            <p style="margin-top: 8px">We reply within one business day</p>
+          </div>
+
+          <div class="card" style="margin-bottom: 24px">
+            <div class="card-icon">📍</div>
+            <h3>Service Area</h3>
+            <p>Based on the Central Coast, NSW. We service:</p>
+            <ul style="padding-left: 20px; color: var(--text-muted); line-height: 2; margin-top: 8px">
+              <li>Central Coast (Gosford to Wyong)</li>
+              <li>Sydney (Northern suburbs & metro)</li>
+              <li>Newcastle & Hunter Region</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">💬</div>
+            <h3>Response Time</h3>
+            <p>We aim to respond to all enquiries within one business day. For urgent quotes, mention it in your message and we'll prioritise it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

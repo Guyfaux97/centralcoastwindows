@@ -1,0 +1,77 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  currentPage?: string;
+}
+
+const { title, description = "Central Coast Windows — Premium thermally broken aluminium windows. Supply and installation across Sydney, the Central Coast, and Newcastle.", currentPage = "" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title} | Central Coast Windows</title>
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <input type="checkbox" id="menu-toggle" />
+    <nav>
+      <div class="nav-inner">
+        <a href="/" class="nav-logo"><img src="/logo.jpg" alt="Central Coast Windows" height="40" /></a>
+        <label class="hamburger" for="menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="/" class={currentPage === "home" ? "active" : ""}>Home</a></li>
+          <li><a href="/services" class={currentPage === "services" ? "active" : ""}>Services</a></li>
+          <li><a href="/science" class={currentPage === "science" ? "active" : ""}>The Science</a></li>
+          <li><a href="/contact" class={`nav-cta ${currentPage === "contact" ? "active" : ""}`}>Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="page-content">
+      <slot />
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="/" class="nav-logo"><img src="/logo.jpg" alt="Central Coast Windows" height="36" /></a>
+            <p>Locally owned and operated on the Central Coast. Supplying and installing premium thermally broken aluminium windows across Sydney, the Central Coast, and Newcastle.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/science">The Science</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="tel:+61200000000">02 0000 0000</a></li>
+              <li><a href="mailto:info@centralcoastwindows.com.au">info@centralcoastwindows.com.au</a></li>
+              <li><a href="/contact">Get a Quote</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Central Coast Windows. All rights reserved.</p>
+          <p>ABN: XX XXX XXX XXX &nbsp;|&nbsp; Locally owned and operated</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
