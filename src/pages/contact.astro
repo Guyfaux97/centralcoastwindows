@@ -27,9 +27,13 @@ import Layout from '../layouts/Layout.astro';
           <form
             name="contact"
             method="POST"
-            action="/contact/success"
+            action="https://api.web3forms.com/submit"
             style="width: 100%"
           >
+            <input type="hidden" name="access_key" value="31538898-68dd-46e8-990d-926ace214fa6" />
+            <input type="hidden" name="subject" value="New Quote Request — Central Coast Windows" />
+            <input type="hidden" name="redirect" value="https://centralcoastwindows.com.au/contact/success" />
+            <input type="hidden" name="from_name" value="Central Coast Windows Website" />
             <div class="form-grid">
               <div class="form-group">
                 <label for="name">Full Name</label>
