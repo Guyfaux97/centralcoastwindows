@@ -161,7 +161,7 @@ nav {
     padding: 16px 0;
   }
 
-  #menu-toggle:checked ~ .nav-inner .nav-links {
+  #menu-toggle:checked ~ nav .nav-links {
     display: flex;
   }
 
